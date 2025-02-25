@@ -1,8 +1,29 @@
 {
+  "name": "data-structure",
+  "version": "1.0.0",
+  "description": "Data Structer Docs",
+  "keywords": [
+    "DSA",
+    "NOTE",
+    "LAB"
+  ],
+  "homepage": "https://github.com/kuntalojha/DATA-STRUCTURE#readme",
+  "bugs": {
+    "url": "https://github.com/kuntalojha/DATA-STRUCTURE/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuntalojha/DATA-STRUCTURE.git"
+  },
+  "license": "ISC",
+  "author": "Kuntal Ojha",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev --host",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview docs --port 8080"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev desc",
+    "docs:build": "vitepress build desc",
+    "docs:preview": "vitepress preview desc --port 8080"
   },
   "devDependencies": {
     "vitepress": "^1.6.3"

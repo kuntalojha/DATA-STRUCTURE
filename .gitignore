@@ -1,2 +1,4 @@
 /node_modules
 *.pdf
+desc/.vitepress/dist
+desc/.vitepress/cache
