@@ -1,25 +1,23 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: 'Mr. Kuntal Ojha'
+  text: 'Assistant Professor'
+  tagline: 'Department of Computer Science & Engineering'
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Data Structure
+      link: /ds
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Data Structure Lab
+      link: /dslab
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Linked List
+    details: Singly, Doubly, Circular Linked List.
+  - title: Stack
+    details: Stack is a linear data structure.
+  - title: Queue
+    details: It follows the principle of "First in, First out" (FIFO).
 ---
-
