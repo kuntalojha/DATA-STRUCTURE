@@ -5,11 +5,13 @@ export default defineConfig({
   title: 'Data Structure',
   base: '/DATA-STRUCTURE/',
   description: 'NOTE',
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      // { text: 'DS', link: '/markdown-examples' },
+      { text: 'Data Structure', link: 'ds' },
+      // { text: 'Data Structure Lab', link: 'dslab' },
     ],
 
     sidebar: [

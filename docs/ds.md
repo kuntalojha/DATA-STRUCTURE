@@ -2,54 +2,13 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# Data Structure Questions
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+## Linked List
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
-
-```md
-<script setup>
-import { useData } from 'vitepress'
-
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-
-<pre>{{ theme }}</pre>
-
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
-```
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-
-<pre>{{ theme }}</pre>
-
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+1.  What is a skip list? (2 marks)
+2.  Discuss in brief about single linked list? (7 marks)
+3.  Define a single linked list. Write the structure of the linked list with a neat sketch. (8 marks)
+4.  (A) Explain the operations of the skip list representation.(10 marks)
+5.  (B) Is linear probing and open addressing same? Justify your answer. (5 marks)
+6.  Write an algorithm of Insert and Delete operation in Singly Linked List. (7 marks)
