@@ -6,7 +6,7 @@ outline: deep
 
 ### Question
 
-- **Write a C program that uses functions to perform the following operations on singly linked list: I. Creation II. Insertion III. Deletion IV. Traversal V. merge two single linked lists**
+- **Write a C program that uses functions to perform the following operations on singly linked list: `I. Creation II. Insertion III. Deletion IV. Traversal V. merge two single linked lists`**
 
 ### Program
 
