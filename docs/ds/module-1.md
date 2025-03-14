@@ -4,6 +4,7 @@ outline: deep
 
 # Day 1 (6/2 P-3)
 
+## Swap two numbers
 **Q.1 Write a program to swap two numbers.**
 
 ```c
