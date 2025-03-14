@@ -5,6 +5,7 @@ outline: deep
 # Day 1 (6/2 P-3)
 
 ## Swap two numbers
+
 **Q.1 Write a program to swap two numbers.**
 
 ```c
@@ -83,7 +84,7 @@ int main() {
 }
 ```
 
-## Data Structure:
+## Data Structure
 
 - Data Structure is a way to store and organize data in a computer so that it can be used
   efficiently.
@@ -95,7 +96,7 @@ int main() {
 - There are two types of data structures-Linear and Non-Linear Data Structures.
 - Examples: Arrays,Stack,Queues,Trees, etc.
 
-## Algorithm:
+## Algorithm
 
 - An Algorithm is a finite set of instructions that, if followed, accomplishes a particular
   task or purpose.
@@ -105,8 +106,7 @@ int main() {
   2.  **OUTPUT:** At least one quantity is produced.
   3.  **DEFINITENESS:** Each instruction is clear and unambiguous.
   4.  **FINITENESS:** If we trace out the instructions of an algorithm, then for all cases,
-    the algorithm terminates after a finite number of steps.
+      the algorithm terminates after a finite number of steps.
   5.  **EFFECTIVENESS:** An algorithm is also generally expected to be effective. This
-    means that all of the operations to be performed in the algorithm must be sufficiently basic that they can in principle be done exactly and in a finite length of
-    time.
-
+      means that all of the operations to be performed in the algorithm must be sufficiently basic that they can in principle be done exactly and in a finite length of
+      time.
