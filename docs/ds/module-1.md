@@ -110,3 +110,46 @@ int main() {
   5.  **EFFECTIVENESS:** An algorithm is also generally expected to be effective. This
       means that all of the operations to be performed in the algorithm must be sufficiently basic that they can in principle be done exactly and in a finite length of
       time.
+
+# Day 2 (11/2 P-4)
+
+## Algorithm can be described in three ways
+
+- **Natural language like English:** In this any natural language is used to describe the
+  algorithm. This is informal way of describing the algorithm.
+- **Graphic representation called flowchart:** This method will work well when the
+  algorithm is small and simple.
+- **Pseudo-code Method:** In this method, we should typically describe algorithms as
+  program, It uses the structural conventions of a normal programming language, but is
+  intended for human reading rather than machine reading. There is no need to follow all
+  the syntax rules of a programming language. It is also called as flow diagram.
+
+## Data Abstraction
+
+- Abstraction means displaying only essential information and hiding the details. Data
+  abstraction refers to providing only essential information about the data to the outside world,
+  hiding the background details or implementation.
+
+**Performance analysis** of an **algorithm** depends upon two factors i.e. amount of memory used
+and amount of compute time consumed on any CPU.
+
+**It can done using following two complexities:**
+
+## 1. Space Complexity
+
+- It is a function of the space needed by the algorithm to run to completion.
+- It is calculated as sum of following two components:
+
+  1.  **Fixed Component-** This includes space of simple variables, constants and instruction
+      space . It does not depend on input and output characteristics.
+  2.  **Variable Component-** This includes space of reference variables and the recursion
+      stack space. It depend on input and output characteristics
+      ```md
+      Space(A)=Fixed Component(A) + Variable Component(A)
+      ```
+
+## 2. Time Complexity
+
+- It is a function of time needed by the algorithm to complete its execution.
+- It is calculated by counting the no. of elementary steps performed by algorithm to
+  completes its execution.
