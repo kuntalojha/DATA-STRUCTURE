@@ -18,8 +18,8 @@ export default defineConfig({
       {
         text: 'Data Structure',
         items: [
-          { text: 'Unit 01', link: '/ds/unit-1' },
-          { text: 'Unit 02', link: '/ds/unit-2' },
+          { text: 'Module 01', link: '/ds/module-1' },
+          { text: 'Module 02', link: '/ds/module-2' },
           { text: 'Unit 03', link: '/ds/unit-3' },
           { text: 'Unit 04', link: '/ds/unit-4' },
           { text: 'Unit 05', link: '/ds/unit-5' },
