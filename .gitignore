@@ -2,3 +2,5 @@
 *.pdf
 desc/.vitepress/dist
 desc/.vitepress/cache
+docs/ds.md
+docs/dslab.md
