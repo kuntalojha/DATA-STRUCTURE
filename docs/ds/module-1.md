@@ -153,3 +153,36 @@ and amount of compute time consumed on any CPU.
 - It is a function of time needed by the algorithm to complete its execution.
 - It is calculated by counting the no. of elementary steps performed by algorithm to
   completes its execution.
+
+Example:1
+- Computing Space and Time complexity of an algorithm:
+  ```md
+  1. Algorithm Swap(a,b){ 
+  2.  temp = a;
+  3.  a = b;
+  4.  b = temp;
+  5. }
+  ```
+**Space Complexity:**
+- Fixed Components are: 
+```md
+  Variable Components are:
+  a - 1 word     
+  b - 1 word
+  temp - 1 word
+  Total = 3 words 
+```
+
+Space Complexity=(3+n) words=O(n)
+
+Example:2
+- Computing Space and Time complexity of an algorithm:
+  ```md
+  1. Algorithm Sum(a,n)
+  2. { 
+  3.  s=0.0;
+  4.  for i=1 to n do
+  5.  s=s+a[i];
+  6.   return s;
+  7. }
+```

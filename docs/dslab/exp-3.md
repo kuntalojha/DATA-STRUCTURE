@@ -2,353 +2,206 @@
 outline: deep
 ---
 
-# Singly linked List
+# Experiment 3
 
-<!-- [[toc]] -->
+## Question
 
-## Linked List Overview
+- **Write a C program that implement stack operations using `I.Arrays II. Linked Lists`**
 
-- A linked list is a linear data structure storing elements of the same type in non-contiguous memory.
+## I. Arrays
 
-- It consists of nodes, each containing:
-
-  1. **Data field** (stores the value).
-  2. **Next pointer** (stores the address of the next node).
-
-- Only the current node knows the location of the next node.
-- So, We can traverse the Singly Linked List only in the forward direction.
-
-## Creation
-
-```c
-// Function to create a new node
-struct node* createNode(int data) {
-    struct node *newNode = (struct node*)malloc(sizeof(struct node)); // Allocate memory
-    newNode->data = data; // Assign data to the data part
-    newNode->link = NULL; // Assign NULL to the link part
-    return newNode;
-}
-```
-
-## Insertion
-
-### Insertion at the beginning.
-
-```c
-// Function to add a node at the beginning
-struct node* addAtBeginning(struct node *head, int data) {
-    struct node *ptr = (struct node*)malloc(sizeof(struct node));
-    ptr->data = data;
-    ptr->link = head;
-    head = ptr;
-
-    return head;
-}
-```
-
-### Insertion at the end
-
-```c
-// Function to add a node at the end
-void addAtEnd(struct node *head, int data) {
-    struct node *ptr, *temp;
-    ptr = head;
-
-    temp = (struct node*)malloc(sizeof(struct node));
-    temp->data = data;
-    temp->link = NULL;
-
-    while (ptr->link != NULL) {
-        ptr = ptr->link;
-    }
-    ptr->link = temp;
-}
-
-```
-
-### Insertion at a specific position
-
-```c
-// Function to add a node at the Nth position
-struct node* addAtNthPosition(struct node *head, int data, int position) {
-    struct node *ptr = head;
-
-    // Create a new node
-    struct node *temp = (struct node*) malloc(sizeof(struct node));
-    temp->data = data;
-    temp->link = NULL;
-
-    if(position == 1){
-        temp->link = head;
-        head = temp;
-        return head;
-    }
-
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
-    }
-
-    temp->link = ptr->link;
-    ptr->link = temp;
-
-    return head;
-}
-```
-
-## Deletion
-
-### Deletion at the beginning
-
-```c
-// Function to delete a node at the beginning
-struct node* deleteAtBeginning(struct node *head) {
-    struct node *ptr = head;
-    head = head->link;
-    free(ptr);
-
-    return head;
-}
-```
-
-### Deletion at the end
-
-```c
-// Function to delete a node at the end
-struct node* deleteAtEnd(struct node *head) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
-
-    while (ptr->link != NULL) {
-        ptr = ptr->link;
-        ptr2 = ptr2->link;
-    }
-    ptr2->link = NULL;
-    free(ptr);
-
-    return head;
-}
-```
-
-### Deletion at a specific position
-
-```c
-// Function to delete a node at the Nth position
-struct node* deleteAtNthPosition(struct node *head, int position) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
-
-    if(position == 1){
-        head = head->link;
-        free(ptr);
-        return head;
-    }
-
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
-    }
-
-    ptr2 = ptr->link;
-    ptr->link = ptr2->link;
-    free(ptr2);
-
-    return head;
-}
-```
-
-## Traversal
-
-### Display the linked list
-
-```c
-// Function to display the linked list
-void display(struct node *head){
-
-   if(head == NULL){
-     printf("Linked list is empty");
-   }
-   else{
-    // Take a temporary pointer ptr
-     struct node *ptr = NULL;
-     ptr = head;
-
-     while(ptr != NULL){
-       printf("%d -> ",ptr->data);
-       ptr = ptr->link;
-     }
-     printf("NULL\n");
-   }
-}
-```
-
-### Count the number of nodes
-
-```c
-// Function to count the number of nodes in the linked list
-void count (struct node *head){
-
-  int count = 0;
-  if(head == NULL){
-     printf("Linked list is empty");
-   }
-  else{
-    // Take a temporary pointer ptr
-    struct node *ptr = NULL;
-    ptr = head;
-
-    while(ptr != NULL){
-       count++;
-       ptr = ptr->link;
-    }
-    printf("\nNumber of nodes: %d\n",count);
-   }
-
-}
-```
-
-## Final Code
+### Program
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure
+// Push : Insert at top
+int push(int stack[], int top, int data, int size) {
+    if (top == size - 1) {
+        printf("Stack is full / overflow. Cannot push.\n");
+        return top;
+    }
+    stack[++top] = data;
+    return top;
+}
+
+// Pop : Remove from top
+int pop(int top) {
+    if (top == -1) {
+        printf("Stack is empty / underflow. Cannot pop.\n");
+        return top;
+    }
+    top--;
+    return top;
+}
+
+// Peek: Show top element
+void peek(int stack[], int top) {
+    if (top == -1) {
+        printf("Stack is empty. Cannot peek.\n");
+        return;
+    }
+    printf("Top element: %d\n", stack[top]);
+}
+
+void display(int stack[], int top) {
+    int i;
+    if (top == -1) {
+        printf("Stack is empty.\n");
+        return;
+    }
+
+    printf("Stack:\n");
+    printf("-----\n");
+    for (i = top; i >= 0; i--) {
+        printf("| %d |\n", stack[i]);
+    }
+    printf("-----\n");
+}
+
+int main() {
+    int size;
+    printf("Enter the size of the stack: ");
+    scanf("%d", &size);
+    int stack[size];  // Declaring the stack using array.
+
+    int top = -1;
+    int choice, data;
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Peek\n");
+        printf("4. Display\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter data: ");
+                scanf("%d", &data);
+                top = push(stack, top, data, size);
+                break;
+
+            case 2:
+                top = pop(top);
+                break;
+
+            case 3:
+                peek(stack, top);
+                break;
+
+            case 4:
+                display(stack, top);
+                break;
+
+            case 5:
+                printf("Exiting program.\n");
+                return 0;
+
+            default:
+                printf("Invalid choice! Try again.\n");
+        }
+    }
+    return 0;
+}
+
+```
+
+### Output
+
+```md
+
+```
+
+## II. Linked Lists
+
+### Program
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
 struct node {
     int data;
     struct node *link;
 };
 
-// Function to create a new node
-struct node* createNode(int data) {
-    struct node *newNode = (struct node*)malloc(sizeof(struct node));
+// Push: Insert at top
+struct node* push(struct node *top, int data) {
+    struct node *newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = data;
     newNode->link = NULL;
+    newNode->link = top;
     return newNode;
 }
 
-// Function to add a node at the beginning
-struct node* addAtBeginning(struct node *head, int data) {
-    struct node *ptr = (struct node*)malloc(sizeof(struct node));
-    ptr->data = data;
-    ptr->link = head;
-    head = ptr;
-
-    return head;
-}
-
-
-// Function to add a node at the Nth position
-struct node* addAtNthPosition(struct node *head, int data, int position) {
-    struct node *ptr = head;
-
-    // Create a new node
-    struct node *temp = (struct node*) malloc(sizeof(struct node));
-    temp->data = data;
-    temp->link = NULL;
-
-    if(position == 1){
-        temp->link = head;
-        head = temp;
-        return head;
+// Pop: Remove from top
+struct node* pop(struct node *top) {
+    struct node *temp = top;
+    if (top == NULL) {
+        printf("Can't pop. Stack is empty / underflow.\n");
+        return NULL;
     }
+    top = top->link; // Move top to next node
+    printf("Popped element: %d\n", temp->data);
+    free(temp); // Free memory
+    return top;
+}
 
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
+// Peek: Show top element
+void peek(struct node *top) {
+    if (top == NULL) {
+        printf("Stack is empty.\n");
+        return;
     }
-
-    temp->link = ptr->link;
-    ptr->link = temp;
-
-    return head;
+    printf("Top / Peek element: %d\n", top->data);
 }
 
-// Function to delete a node at the beginning
-struct node* deleteAtBeginning(struct node *head) {
-    struct node *ptr = head;
-    head = head->link;
-    free(ptr);
+int main() {
+    struct node *top = NULL; // Empty stack
+    int choice, data;
 
-    return head;
-}
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Peek\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-// Function to delete a node at the end
-struct node* deleteAtEnd(struct node *head) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
+        switch (choice) {
+            case 1:
+                printf("Enter data: ");
+                scanf("%d", &data);
+                top = push(top, data);
+                break;
 
-    while (ptr->link != NULL) {
-        ptr = ptr->link;
-        ptr2 = ptr2->link;
+            case 2:
+                top = pop(top);
+                break;
+
+            case 3:
+                peek(top);
+                break;
+            case 4:
+                printf("Exiting program.\n");
+                return 0;
+
+            default:
+                printf("Invalid choice! Try again.\n");
+        }
     }
-    ptr2->link = NULL;
-    free(ptr);
-
-    return head;
+    return 0;
 }
-
-// Function to delete a node at the Nth position
-struct node* deleteAtNthPosition(struct node *head, int position) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
-
-    if(position == 1){
-        head = head->link;
-        free(ptr);
-        return head;
-    }
-
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
-    }
-
-    ptr2 = ptr->link;
-    ptr->link = ptr2->link;
-    free(ptr2);
-
-    return head;
-}
-
-// Function to display the linked list
-void display(struct node *head){
-
-   if(head == NULL){
-     printf("Linked list is empty");
-   }
-   else{
-    // Take a temporary pointer ptr
-     struct node *ptr = NULL;
-     ptr = head;
-
-     while(ptr != NULL){
-       printf("%d -> ",ptr->data);
-       ptr = ptr->link;
-     }
-     printf("NULL\n");
-   }
-}
-
-// Function to count the number of nodes in the linked list
-void count (struct node *head){
-
-  int count = 0;
-  if(head == NULL){
-     printf("Linked list is empty");
-   }
-  else{
-    // Take a temporary pointer ptr
-    struct node *ptr = NULL;
-    ptr = head;
-
-    while(ptr != NULL){
-       count++;
-       ptr = ptr->link;
-    }
-    printf("\nNumber of nodes: %d\n",count);
-   }
-
-}
-
 ```
 
-## More
+### Output
 
-Learn more about [Single Linked List](../ds/unit-1).
+```md
+
+```
