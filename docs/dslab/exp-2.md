@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Experiment 2:
+# Experiment 2
 
 ## Question
 
