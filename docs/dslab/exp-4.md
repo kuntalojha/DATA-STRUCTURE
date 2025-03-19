@@ -351,4 +351,4 @@ void count (struct node *head){
 
 ## More
 
-Learn more about [Single Linked List](../ds/unit-1).
+Learn more about [Single Linked List](../ds/module-1).
