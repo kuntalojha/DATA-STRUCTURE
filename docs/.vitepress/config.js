@@ -11,7 +11,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Data Structure', link: 'ds' },
-      // { text: 'Data Structure Lab', link: 'dslab' },
+      { text: 'Result', link: 'result' },
     ],
 
     sidebar: [

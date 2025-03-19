@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: Data Structure Lab
       link: /dslab
+    - theme: brand
+      text: Result
+      link: /result
 
 features:
   - title: Linked List
