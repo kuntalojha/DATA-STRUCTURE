@@ -15,7 +15,7 @@ outline: deep
 | 7     | 24671A0507 | BOGGULA SOWMYA             |      00       |           |           |           |           |
 | 8     | 24671A0508 | BOLLA KAVYA                |      03       |           |           |           |           |
 | 9     | 24671A0509 | BOLLAM MANASA              |      05       |           |           |           |           |
-| 10    | 24671A0510 | BOLLURI GANESH             |               |           |           |           |           |
+| 10    | 24671A0510 | BOLLURI GANESH             |      02       |           |           |           |           |
 | 11    | 24671A0511 | BORLAKUNTA SUHAN           |               |           |           |           |           |
 | 12    | 24671A0512 | BOYINI NITHIN SAI          |      05       |           |           |           |           |
 | 13    | 24671A0513 | D.PRATYUSHA                |               |           |           |           |           |
@@ -54,7 +54,7 @@ outline: deep
 | 46    | 24671A0547 | PALLERLA AKSHITHNATH       |      03       |           |           |           |           |
 | 47    | 24671A0548 | PENDEM YASHWANTH           |      07       |           |           |           |           |
 | 48    | 24671A0549 | PITTALA MAHESHWARI         |      08       |           |           |           |           |
-| 49    | 24671A0550 | POWAR ANITHABAI            |               |           |           |           |           |
+| 49    | 24671A0550 | POWAR ANITHABAI            |      10       |           |           |           |           |
 | 50    | 24671A0551 | RAGHUPATHI MAHESH          |      05       |           |           |           |           |
 | 51    | 24671A0552 | RALAPATI RANJITH           |      05       |           |           |           |           |
 | 52    | 24671A0553 | SABA TABASSUM              |      02       |           |           |           |           |
@@ -68,6 +68,6 @@ outline: deep
 | 60    | 24671A0561 | UDUTHA AKSHAY KUMAR        |      08       |           |           |           |           |
 | 61    | 24671A0562 | VADNALA DEEPIKA SRINIVAS   |      05       |           |           |           |           |
 | 62    | 24671A0563 | VANAMPALLY PRADEEP REDDY   |      05       |           |           |           |           |
-| 63    | 24671A0564 | VARALA NAVYA SRI           |               |           |           |           |           |
+| 63    | 24671A0564 | VARALA NAVYA SRI           |      02       |           |           |           |           |
 | 64    | 24671A0565 | YEDULA ANUSHKA             |      05       |           |           |           |           |
 |       |            |                            |  (18-03-25)   |           |           |           |           |
