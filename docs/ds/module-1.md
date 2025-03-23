@@ -234,7 +234,7 @@ So, Space Complexity = O(1)
 
 <hr>
 
-# Day 3 (14/2 P-5)
+# Day 3 (12/2 P-3)
 
 Example:3
 
@@ -273,4 +273,4 @@ Space complexity=O(n<sup>2</sup>)
   2. Big-Omega Notation (Ω)
   3. Big-Theta Notation (Θ)
 
-# Day 4 (16/2 P-6)
+# Day 4 (12/2 P-4)
