@@ -205,9 +205,6 @@ Example:2
   6. return s;
   7. }
   ```
-
-````
-
 **Space Complexity:**
 - Fixed Components are:
 ```md
