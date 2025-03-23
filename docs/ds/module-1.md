@@ -235,6 +235,10 @@ So, Space Complexity = O(1)
         Time Complexity = O(n)
 ```
 
+<hr>
+
+# Day 3 (14/2 P-5)
+
 Example:3
 
 - Computing Space and Time complexity of an algorithm:
@@ -243,8 +247,8 @@ Example:3
 1.  Algorithm Add(A,B,n){ No. of elementary steps
 2.  for(i=0;i< n;i++){ ------------------- n+1
 3.  for(j=0;j< n;j++){ ------------------- n\*(n+1)
-4.           C[i,j]=A[i,j]+B[i,j] -------------   n*n
-5.        }
+4.            C[i,j]=A[i,j]+B[i,j] -------------   n*n
+5.         }
 6.  }
 7.  }
 ```
@@ -271,16 +275,5 @@ Space complexity=O(n<sup>2</sup>)
   1. Big-Oh Notation (O)
   2. Big-Omega Notation (Ω)
   3. Big-Theta Notation (Θ)
-
-<hr>
-
-# Day 3 (14/2 P-5)
-
-
-
-
-
-
-
 
 # Day 4 (16/2 P-6)
