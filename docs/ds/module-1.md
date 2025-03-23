@@ -196,7 +196,7 @@ So, Space Complexity = O(1)
 Example:2
 
 - Computing Space and Time complexity of an algorithm:
-  ```md
+```md
   1. Algorithm Sum(a,n)
   2. {
   3. s=0.0;
@@ -204,7 +204,7 @@ Example:2
   5. s=s+a[i];
   6. return s;
   7. }
-  ```
+```
 **Space Complexity:**
 - Fixed Components are:
 ```md
