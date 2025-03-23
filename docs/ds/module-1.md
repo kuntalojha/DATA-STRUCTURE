@@ -196,24 +196,28 @@ So, Space Complexity = O(1)
 Example:2
 
 - Computing Space and Time complexity of an algorithm:
+
 ```md
-  1. Algorithm Sum(a,n)
-  2. {
-  3. s=0.0;
-  4. for i=1 to n do
-  5. s=s+a[i];
-  6. return s;
-  7. }
+1. Algorithm Sum(a,n)
+2. {
+3. s=0.0;
+4. for i=1 to n do
+5. s=s+a[i];
+6. return s;
+7. }
 ```
+
 **Space Complexity:**
+
 - Fixed Components are:
+
 ```md
-  Variable Components are:
-  s - 1 word
-  i - 1 word
-  n - 1 word
-  Total = 3 words
-````
+Variable Components are:
+s - 1 word
+i - 1 word
+n - 1 word
+Total = 3 words
+```
 
 Space Complexity=S(n) = 3 words <br>
 So, Space Complexity = O(1)
@@ -244,8 +248,8 @@ Example:3
 1.  Algorithm Add(A,B,n){ No. of elementary steps
 2.  for(i=0;i< n;i++){ ------------------- n+1
 3.  for(j=0;j< n;j++){ ------------------- n\*(n+1)
-4.            C[i,j]=A[i,j]+B[i,j] -------------   n*n
-5.         }
+4.                C[i,j]=A[i,j]+B[i,j] -------------   n*n
+5.             }
 6.  }
 7.  }
 ```
@@ -273,4 +277,50 @@ Space complexity=O(n<sup>2</sup>)
   2. Big-Omega Notation (Ω)
   3. Big-Theta Notation (Θ)
 
+<hr>
+
 # Day 4 (12/2 P-4)
+
+<hr>
+
+# Day 5 (14/2 P-4)
+
+<hr>
+
+# Day 4 (14/2 P-5)
+
+<hr>
+
+# Day 4 (18/2 P-4)
+
+<hr>
+
+# Day 4 (19/2 P-5)
+
+<hr>
+
+# Day 4 (20/2 P-3)
+
+<hr>
+
+# Day 4 (22/2 P-1)
+
+<hr>
+
+# Day 4 (22/2 P-2)
+
+<hr>
+
+# Day 4 (25/2 P-3)
+
+<hr>
+
+# Day 4 (25/2 P-4)
+
+<hr>
+
+# Day 4 (25/2 P-5)
+
+<hr>
+
+# Day 4 (28/2 P-3)
