@@ -15,6 +15,9 @@ hero:
     - theme: brand
       text: Result
       link: /result
+    - theme: alt
+      text: LAB EXECUTION
+      link: /lab-execution
 
 features:
   - title: Linked List

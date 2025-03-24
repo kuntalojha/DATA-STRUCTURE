@@ -71,3 +71,32 @@ outline: deep
 | 63    | 24671A0564 | VARALA NAVYA SRI           |      02       |           |           |           |           |
 | 64    | 24671A0565 | YEDULA ANUSHKA             |      05       |           |           |           |           |
 |       |            |                            |  (18-03-25)   |           |           |           |           |
+
+
+| SL NO | Roll No    | Name                       | EXP1 | EXP2 | EXP3 | EXP4 | EXP5 | EXP6 | EXP7 | EXP8 | EXP9 | EXP10 | EXP11 | EXP12 | EXP13 | EXP14 | EXP15 | EXP16 | EXP17 | EXP18 |
+| ----- | ---------- | -------------------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 1     | 24671A0501 | ADDANDI VISHWAS PATEL      |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 2     | 24671A0502 | AKALDEVU VENKATESH YADAV   |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 3     | 24671A0503 | AKAVARAPU KSHITHIJ         |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 4     | 24671A0504 | ARJUNA ROHITHKUMAR         |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 5     | 24671A0505 | ARUWA JASHWANTH REDDY      |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 6     | 24671A0506 | BITLUGU SHANMUKH           |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 7     | 24671A0507 | BOGGULA SOWMYA             |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 8     | 24671A0508 | BOLLA KAVYA                |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 9     | 24671A0509 | BOLLAM MANASA              |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 10    | 24671A0510 | BOLLURI GANESH             |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 11    | 24671A0511 | BORLAKUNTA SUHAN           |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 12    | 24671A0512 | BOYINI NITHIN SAI          |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 13    | 24671A0513 | D.PRATYUSHA                |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 14    | 24671A0514 | DANDOTHIKAR RAVINDRA MOHAN |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 15    | 24671A0515 | DAPPURI JASHWANTH REDDY    |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 16    | 24671A0516 | DARIVEMULA RAJESH          |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 17    | 24671A0517 | DOVARI JONAH RAJ           |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 18    | 24671A0518 | DUVVURI NIKHIL             |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 19    | 24671A0519 | DYAPA SREE KARTHIKEYA      |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 20    | 24671A0520 | E CHARANTEJA GOUD          |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 21    | 24671A0521 | EDDULA RAVI TEJA           |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 22    | 24671A0522 | GADE SAI KUMAR             |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 23    | 24671A0523 | GANDHAM MOUNIKA            |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| ...   | ...        | ...                        |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
+| 64    | 24671A0564 | YARRA VARSHITHA            |      |      |      |      |      |      |      |      |      |       |       |       |       |       |       |       |       |       |
