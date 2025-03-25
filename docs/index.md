@@ -16,8 +16,11 @@ hero:
       text: Result
       link: /result
     - theme: alt
-      text: LAB EXECUTION
+      text: Lab Execution
       link: /lab-execution
+    - theme: alt
+      text: Syllabus
+      link: /syllabus
 
 features:
   - title: Linked List
