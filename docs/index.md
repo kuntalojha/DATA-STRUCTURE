@@ -18,7 +18,7 @@ hero:
     - theme: alt
       text: Lab Execution
       link: /lab-execution
-    - theme: alt
+    - theme: brand
       text: Syllabus
       link: /syllabus
 

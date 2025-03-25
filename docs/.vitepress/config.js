@@ -18,11 +18,10 @@ export default defineConfig({
       {
         text: 'Data Structure',
         items: [
-          { text: 'Module 01', link: '/ds/module-1' },
-          { text: 'Module 02', link: '/ds/module-2' },
-          // { text: 'Unit 03', link: '/ds/unit-3' },
-          // { text: 'Unit 04', link: '/ds/unit-4' },
-          // { text: 'Unit 05', link: '/ds/unit-5' },
+          { text: 'M1 Unit 01', link: '/ds/modules/module-1/unit-1' },
+          { text: 'M1 Unit 02', link: '/ds/modules/module-1/unit-2' },
+          { text: 'M2 Unit 01', link: '/ds/modules/module-2/unit-1' },
+          { text: 'M2 Unit 02', link: '/ds/modules/module-2/unit-2' },
         ],
       },
       {

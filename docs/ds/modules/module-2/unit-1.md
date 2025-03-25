@@ -2,5 +2,3 @@
 outline: deep
 ---
 
-
-# Linked List
