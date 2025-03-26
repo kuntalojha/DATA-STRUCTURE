@@ -1,5 +1,5 @@
 /node_modules
 *.pdf
-!public/*.pdf
+!public/unit-2.pdf
 desc/.vitepress/dist
 desc/.vitepress/cache
