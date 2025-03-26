@@ -6,13 +6,13 @@ outline: deep
 
 <div class="pdf-container">
   <iframe 
-    src="/DATA-STRUCTURE/ALL.pdf#view=fitH" 
+    src="/ALL.pdf#view=fitH" 
     width="100%" 
     height="600px"
     frameborder="0"
   >
     <p>This browser doesn't support PDF viewing. 
-      <a href="/DATA-STRUCTURE/ALL.pdf">Download the PDF</a> instead.
+      <a href="/docs/ds/modules/module-1/ALL.pdf">Download the PDF</a> instead.
     </p>
   </iframe>
 </div>
