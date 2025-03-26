@@ -2,8 +2,6 @@
 outline: deep
 ---
 
-# Day 1 (6/2 P-3)
-
 ## Swap two numbers
 
 **Q.1 Write a program to swap two numbers.**
@@ -111,9 +109,6 @@ int main() {
       means that all of the operations to be performed in the algorithm must be sufficiently basic that they can in principle be done exactly and in a finite length of
       time.
 
-<hr>
-
-# Day 2 (11/2 P-4)
 
 ## Algorithm can be described in three ways
 
@@ -238,7 +233,6 @@ So, Space Complexity = O(1)
 
 <hr>
 
-# Day 3 (12/2 P-3)
 
 Example:3
 
@@ -277,50 +271,3 @@ Space complexity=O(n<sup>2</sup>)
   2. Big-Omega Notation (Ω)
   3. Big-Theta Notation (Θ)
 
-<hr>
-
-# Day 4 (12/2 P-4)
-
-<hr>
-
-# Day 5 (14/2 P-4)
-
-<hr>
-
-# Day 4 (14/2 P-5)
-
-<hr>
-
-# Day 4 (18/2 P-4)
-
-<hr>
-
-# Day 4 (19/2 P-5)
-
-<hr>
-
-# Day 4 (20/2 P-3)
-
-<hr>
-
-# Day 4 (22/2 P-1)
-
-<hr>
-
-# Day 4 (22/2 P-2)
-
-<hr>
-
-# Day 4 (25/2 P-3)
-
-<hr>
-
-# Day 4 (25/2 P-4)
-
-<hr>
-
-# Day 4 (25/2 P-5)
-
-<hr>
-
-# Day 4 (28/2 P-3)
