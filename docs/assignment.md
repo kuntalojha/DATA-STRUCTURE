@@ -2,7 +2,7 @@
 
 > - Write any 5 Questions from below .
 > - Use A4 paper only.
-> - Use this as a fontpage. <p> <a href="/DATA-STRUCTURE/AT.pdf" target="_blank">Click here to download Fontpage.</a>.</p>
+> - Use this as a fontpage. <p> <a href="/DATA-STRUCTURE/AT.pdf" target="_blank">Click here to download Fontpage</a> .</p>
 
 ## Questions:
 
@@ -23,4 +23,4 @@
 11. Write a C program to implement the operations of Stack using array.
 <hr>
 
-# ASSIGNMENT 02
+<!-- # ASSIGNMENT 02 -->
