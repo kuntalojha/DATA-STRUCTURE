@@ -2,353 +2,160 @@
 outline: deep
 ---
 
-# Singly linked List
+# Experiment 4
 
-<!-- [[toc]] -->
+## Question
 
-## Linked List Overview
+- **`I. Write a C program to convert infix expression to postfix expression using stack II. Write a C program to evaluate postfix expression.`**
 
-- A linked list is a linear data structure storing elements of the same type in non-contiguous memory.
+## I. Write a C program to convert infix expression to postfix expression using stack.
 
-- It consists of nodes, each containing:
-
-  1. **Data field** (stores the value).
-  2. **Next pointer** (stores the address of the next node).
-
-- Only the current node knows the location of the next node.
-- So, We can traverse the Singly Linked List only in the forward direction.
-
-## Creation
-
-```c
-// Function to create a new node
-struct node* createNode(int data) {
-    struct node *newNode = (struct node*)malloc(sizeof(struct node)); // Allocate memory
-    newNode->data = data; // Assign data to the data part
-    newNode->link = NULL; // Assign NULL to the link part
-    return newNode;
-}
-```
-
-## Insertion
-
-### Insertion at the beginning.
-
-```c
-// Function to add a node at the beginning
-struct node* addAtBeginning(struct node *head, int data) {
-    struct node *ptr = (struct node*)malloc(sizeof(struct node));
-    ptr->data = data;
-    ptr->link = head;
-    head = ptr;
-
-    return head;
-}
-```
-
-### Insertion at the end
-
-```c
-// Function to add a node at the end
-void addAtEnd(struct node *head, int data) {
-    struct node *ptr, *temp;
-    ptr = head;
-
-    temp = (struct node*)malloc(sizeof(struct node));
-    temp->data = data;
-    temp->link = NULL;
-
-    while (ptr->link != NULL) {
-        ptr = ptr->link;
-    }
-    ptr->link = temp;
-}
-
-```
-
-### Insertion at a specific position
-
-```c
-// Function to add a node at the Nth position
-struct node* addAtNthPosition(struct node *head, int data, int position) {
-    struct node *ptr = head;
-
-    // Create a new node
-    struct node *temp = (struct node*) malloc(sizeof(struct node));
-    temp->data = data;
-    temp->link = NULL;
-
-    if(position == 1){
-        temp->link = head;
-        head = temp;
-        return head;
-    }
-
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
-    }
-
-    temp->link = ptr->link;
-    ptr->link = temp;
-
-    return head;
-}
-```
-
-## Deletion
-
-### Deletion at the beginning
-
-```c
-// Function to delete a node at the beginning
-struct node* deleteAtBeginning(struct node *head) {
-    struct node *ptr = head;
-    head = head->link;
-    free(ptr);
-
-    return head;
-}
-```
-
-### Deletion at the end
-
-```c
-// Function to delete a node at the end
-struct node* deleteAtEnd(struct node *head) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
-
-    while (ptr->link != NULL) {
-        ptr = ptr->link;
-        ptr2 = ptr2->link;
-    }
-    ptr2->link = NULL;
-    free(ptr);
-
-    return head;
-}
-```
-
-### Deletion at a specific position
-
-```c
-// Function to delete a node at the Nth position
-struct node* deleteAtNthPosition(struct node *head, int position) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
-
-    if(position == 1){
-        head = head->link;
-        free(ptr);
-        return head;
-    }
-
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
-    }
-
-    ptr2 = ptr->link;
-    ptr->link = ptr2->link;
-    free(ptr2);
-
-    return head;
-}
-```
-
-## Traversal
-
-### Display the linked list
-
-```c
-// Function to display the linked list
-void display(struct node *head){
-
-   if(head == NULL){
-     printf("Linked list is empty");
-   }
-   else{
-    // Take a temporary pointer ptr
-     struct node *ptr = NULL;
-     ptr = head;
-
-     while(ptr != NULL){
-       printf("%d -> ",ptr->data);
-       ptr = ptr->link;
-     }
-     printf("NULL\n");
-   }
-}
-```
-
-### Count the number of nodes
-
-```c
-// Function to count the number of nodes in the linked list
-void count (struct node *head){
-
-  int count = 0;
-  if(head == NULL){
-     printf("Linked list is empty");
-   }
-  else{
-    // Take a temporary pointer ptr
-    struct node *ptr = NULL;
-    ptr = head;
-
-    while(ptr != NULL){
-       count++;
-       ptr = ptr->link;
-    }
-    printf("\nNumber of nodes: %d\n",count);
-   }
-
-}
-```
-
-## Final Code
+### Program
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
-// Define the structure
-struct node {
-    int data;
-    struct node *link;
-};
-
-// Function to create a new node
-struct node* createNode(int data) {
-    struct node *newNode = (struct node*)malloc(sizeof(struct node));
-    newNode->data = data;
-    newNode->link = NULL;
-    return newNode;
+// Function to return precedence of operators
+int prec(char c) {
+    if (c == '^')
+        return 3;
+    else if (c == '/' || c == '*')
+        return 2;
+    else if (c == '+' || c == '-')
+        return 1;
+    else
+        return -1;
 }
 
-// Function to add a node at the beginning
-struct node* addAtBeginning(struct node *head, int data) {
-    struct node *ptr = (struct node*)malloc(sizeof(struct node));
-    ptr->data = data;
-    ptr->link = head;
-    head = ptr;
+// Function to perform infix to postfix conversion
+char * infixToPostfix(char * exp)
+{
 
-    return head;
-}
-
-
-// Function to add a node at the Nth position
-struct node* addAtNthPosition(struct node *head, int data, int position) {
-    struct node *ptr = head;
-
-    // Create a new node
-    struct node *temp = (struct node*) malloc(sizeof(struct node));
-    temp->data = data;
-    temp->link = NULL;
-
-    if(position == 1){
-        temp->link = head;
-        head = temp;
-        return head;
+    int j = 0,i = 0;
+    int top = -1;//Indicates the stack is empty
+    int len = strlen(exp);
+    char *result=(char*)malloc(sizeof(char)*len);//To store Postfix expression
+    char *stack=(char *)malloc(sizeof(char)*len);
+    while(exp[i] != '\0')
+    {
+        char c = exp[i];
+        if (isalnum(c))                //Checking whether the character is alphanumeric
+            result[j++] = c;
+        else if (c == '(')             //checking whether the character is '('
+            stack[++top] = '(';
+        else if (c == ')') {           //checking whether the character is ')'
+            while (top != -1 && stack[top] != '(') {
+                result[j++] = stack[top--];
+            }
+            top--;
+        }
+        else {
+            while (top != -1 && (prec(c) < prec(stack[top]) ||      //if the character is operator
+                                 prec(c) == prec(stack[top]))) {
+                result[j++] = stack[top--];
+            }
+            stack[++top] = c;
+        }i++;
     }
 
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
+    // Pop all the remaining elements from the stack and store it in the result
+    while (top != -1) {
+        result[j++] = stack[top--];
     }
+    result[j] = '\0';
+    return result;
 
-    temp->link = ptr->link;
-    ptr->link = temp;
-
-    return head;
 }
 
-// Function to delete a node at the beginning
-struct node* deleteAtBeginning(struct node *head) {
-    struct node *ptr = head;
-    head = head->link;
-    free(ptr);
+int main() {
+    // char expression[] = "1+2*(3+4-5)*(4+2/*3)-7";
+    // char expression[] = "A+B*C+D";
+    char expression[] = "((A+B)-C*(D/E))+F";
+    printf("The infix expression is %s\n",expression);
+    printf("The postfix expression is %s",infixToPostfix(expression));
 
-    return head;
+    return 0;
+}
+```
+
+### Output
+
+```md
+
+```
+
+## II. Write a C program to evaluate postfix expression.
+
+### Program
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>  // for isdigit()
+
+// Function to perform arithmetic operations
+int performOperation(int operand1, int operand2, char operator) {
+    switch (operator) {
+        case '+': return operand1 + operand2;
+        case '-': return operand1 - operand2;
+        case '*': return operand1 * operand2;
+        case '/': return operand1 / operand2;
+        case '%': return operand1 % operand2;
+        default:  return -1; // Invalid operator
+    }
 }
 
-// Function to delete a node at the end
-struct node* deleteAtEnd(struct node *head) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
-
-    while (ptr->link != NULL) {
-        ptr = ptr->link;
-        ptr2 = ptr2->link;
-    }
-    ptr2->link = NULL;
-    free(ptr);
-
-    return head;
+// Function to check if a character is an operator
+int isOperator(char c) {
+    return c == '+' || c == '-' || c == '*' || c == '/' || c == '%';
 }
 
-// Function to delete a node at the Nth position
-struct node* deleteAtNthPosition(struct node *head, int position) {
-    struct node *ptr = head;
-    struct node *ptr2 = head;
+// Function to evaluate a postfix expression
+int evaluatePostfix(char *expression) {
+    int top = -1;
+    int length = strlen(expression);
+    int *stack = (int *)malloc(sizeof(int) * length);
 
-    if(position == 1){
-        head = head->link;
-        free(ptr);
-        return head;
+    if (stack == NULL) {
+        printf("Memory allocation failed!\n");
+        return -1;
     }
 
-    for (int i = 1; i < position-1 && ptr != NULL; i++) {
-        ptr = ptr->link;
+    for (int i = 0; expression[i] != '\0'; i++) {
+        char token = expression[i];
+
+        if (isdigit(token)) {
+            stack[++top] = token - '0';  // Convert character digit to integer
+        } else if (isOperator(token)) {
+            int operand2 = stack[top--];
+            int operand1 = stack[top--];
+            stack[++top] = performOperation(operand1, operand2, token);
+        }
     }
 
-    ptr2 = ptr->link;
-    ptr->link = ptr2->link;
-    free(ptr2);
-
-    return head;
+    int result = stack[top];
+    free(stack);
+    return result;
 }
 
-// Function to display the linked list
-void display(struct node *head){
+int main() {
 
-   if(head == NULL){
-     printf("Linked list is empty");
-   }
-   else{
-    // Take a temporary pointer ptr
-     struct node *ptr = NULL;
-     ptr = head;
+    //char expression[] = "12*2/4+5-";   // Example: 1 * 2 / 2 + 4 - 5 = 0
+    char expression[] = "234*+5+";   // Example: 2 + 3 * 4  + 5 = 19
+    int result = evaluatePostfix(expression);
+    printf("The result after evaluation is: %d\n", result);
 
-     while(ptr != NULL){
-       printf("%d -> ",ptr->data);
-       ptr = ptr->link;
-     }
-     printf("NULL\n");
-   }
-}
-
-// Function to count the number of nodes in the linked list
-void count (struct node *head){
-
-  int count = 0;
-  if(head == NULL){
-     printf("Linked list is empty");
-   }
-  else{
-    // Take a temporary pointer ptr
-    struct node *ptr = NULL;
-    ptr = head;
-
-    while(ptr != NULL){
-       count++;
-       ptr = ptr->link;
-    }
-    printf("\nNumber of nodes: %d\n",count);
-   }
-
+    return 0;
 }
 
 ```
 
-## More
+### Output
 
-Learn more about [Single Linked List](../ds/modules/module-1/unit-1).
+```md
+
+```
