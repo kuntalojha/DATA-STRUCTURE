@@ -10,3 +10,4 @@ outline: auto
 - [Experiment 02](dslab/exp-2)
 - [Experiment 03](dslab/exp-3)
 - [Experiment 04](dslab/exp-4)
+- [Experiment 05](dslab/exp-5)
