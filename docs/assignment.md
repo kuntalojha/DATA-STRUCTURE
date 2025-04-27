@@ -1,3 +1,4 @@
+<!--
 # ASSIGNMENT 01
 
 > - Write any 5 Questions from below .
@@ -21,6 +22,11 @@
 9. Explain circular linked list operations in detail.
 10. Explain DEQUE ?
 11. Write a C program to implement the operations of Stack using array.
+12. Explain the procedure to convert Infix to postfix ?
+13. Explain how to create circular linked list and insert nodes at end ? 
+14. Explain the time and space complexity of an
+ algorithm with suitable example?
+15. Write a program to implement the queue using linked list ?
 <hr>
 
-<!-- # ASSIGNMENT 02 -->
+ # ASSIGNMENT 02 -->
