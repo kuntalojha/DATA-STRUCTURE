@@ -131,7 +131,7 @@ int main() {
 ```
 
 ```
-## I. Linked Lists
+## II. Linked Lists
 
 ## Program:
 
