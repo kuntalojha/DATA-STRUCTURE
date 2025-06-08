@@ -48,7 +48,8 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/kuntalojha' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/mrkuntalojha/' },
       { icon: 'twitter', link: 'https://x.com/kuntalojha' },
-      // { icon: 'youtube', link: 'https://www.youtube.com/@kuntalojha' },
+      { icon: 'youtube', link: 'https://www.youtube.com/@kuntalojhadev' },
+      { icon: 'youtube', link: 'https://www.youtube.com/@kuntalojha' },
     ],
   },
 });
