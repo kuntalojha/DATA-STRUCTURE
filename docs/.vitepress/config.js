@@ -23,6 +23,7 @@ export default defineConfig({
           { text: 'M2 Unit 01', link: '/ds/modules/module-2/unit-1' },
           { text: 'M2 Unit 02', link: '/ds/modules/module-2/unit-2' },
           { text: 'Module 03', link: '/ds/modules/module-3/module-3' },
+          { text: 'Module 04', link: '/ds/modules/module-4/module-4' },
         ],
       },
       {
