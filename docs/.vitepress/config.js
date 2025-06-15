@@ -24,6 +24,7 @@ export default defineConfig({
           { text: 'M2 Unit 02', link: '/ds/modules/module-2/unit-2' },
           { text: 'Module 03', link: '/ds/modules/module-3/module-3' },
           { text: 'Module 04', link: '/ds/modules/module-4/module-4' },
+          { text: 'Module 05', link: '/ds/modules/module-5/module-5' },
         ],
       },
       {
@@ -37,7 +38,7 @@ export default defineConfig({
           { text: 'Experiment 06', link: '/dslab/exp-6.md' },
           { text: 'Experiment 07', link: '/dslab/exp-7.md' },
           { text: 'Experiment 08', link: '/dslab/exp-8.md' },
-          // { text: 'Experiment 09', link: '/dslab/exp-9.md' },
+          { text: 'Experiment 09', link: '/dslab/exp-9.md' },
           // { text: 'Experiment 10', link: '/dslab/exp-10.md' },
           // { text: 'Experiment 11', link: '/dslab/exp-12.md' },
           // { text: 'Experiment 13', link: '/dslab/exp-13.md' },
