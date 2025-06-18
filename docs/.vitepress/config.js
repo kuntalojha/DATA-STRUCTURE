@@ -10,8 +10,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      // { text: 'Data Structure', link: 'ds' },
-      { text: 'Result', link: 'result' },
+      { text: 'Question', link: 'question' },
     ],
 
     sidebar: [
@@ -39,7 +38,8 @@ export default defineConfig({
           { text: 'Experiment 07', link: '/dslab/exp-7.md' },
           { text: 'Experiment 08', link: '/dslab/exp-8.md' },
           { text: 'Experiment 09', link: '/dslab/exp-9.md' },
-          // { text: 'Experiment 10', link: '/dslab/exp-10.md' },
+          { text: 'Experiment 10', link: '/dslab/exp-10.md' },
+          { text: 'Experiment 11', link: '/dslab/exp-11.md' },
           // { text: 'Experiment 11', link: '/dslab/exp-12.md' },
           // { text: 'Experiment 13', link: '/dslab/exp-13.md' },
         ],
