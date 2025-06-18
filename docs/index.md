@@ -6,21 +6,25 @@ hero:
   text: 'Assistant Professor'
   tagline: 'Department of Computer Science & Engineering'
   actions:
-    - theme: brand
+    - theme: alt
       text: Data Structure
       link: /ds
-    - theme: alt
+    - theme: brand
       text: Data Structure Lab
       link: /dslab
-    - theme: brand
-      text: Result
-      link: /result
+        
+    # - theme: brand
+    #   text: Result
+    #   link: /result
+    # - theme: alt
+    #   text: Lab Execution
+    #   link: /lab-execution
     - theme: alt
-      text: Lab Execution
-      link: /lab-execution
-    - theme: brand
       text: Assignment
       link: /assignment
+    - theme: brand
+      text: Feedback
+      link: https://forms.gle/JrvZTGwyCDChGjGJ7
     - theme: alt
       text: Syllabus
       link: /syllabus
