@@ -19,10 +19,10 @@ hero:
     # - theme: alt
     #   text: Lab Execution
     #   link: /lab-execution
-    - theme: alt
+    - theme: brand
       text: Assignment
       link: /assignment
-    - theme: brand
+    - theme: alt
       text: Feedback
       link: https://forms.gle/JrvZTGwyCDChGjGJ7
     - theme: alt
