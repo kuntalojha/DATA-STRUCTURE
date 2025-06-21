@@ -1,11 +1,12 @@
 # ASSIGNMENT 02
 
-> - Write all the questions from below .
+> - Write any 5 questions from the list below. However, Question 6 is mandatory.
 > - Use A4 paper only.
 > - Use this as a Frontpage. <p> <a href="/DATA-STRUCTURE/AT2.pdf" target="_blank">Click here to download Frontpage</a> .</p>
 
-## Questions:
-1. 
+![Question](./images/AS2.png)
+
+
 
 <!--
 # ASSIGNMENT 01
