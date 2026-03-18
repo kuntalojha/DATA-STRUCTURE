@@ -4,132 +4,71 @@ outline: deep
 
 # Data Structures
 
-## Module 1:
+## Unit 1
 
-### Unit 1
+- **Introduction to Data Structures**Basic Terminology, Classification of Data Structures, Operation on Data Structures, abstract data types, selecting a Data Structure, Linear list – Introduction, singly linked list, Circular Linked Lists, 
+Doubly Linked List, Stacks- Operations, Stack algorithm, Stack ADT, Stack applications, Queues- operations, Queue Algorithm, Queue ADT, Queue Applications. 
 
-- **Basic concepts** - Algorithm Specification, Performance analysis - time complexity and space
-  complexity, Asymptotic Notation - Big O, Omega and Theta notations, Introduction to Linear and
-  Non Linear data structures.
+## Unit 2
 
-### Unit 2
+- **Trees** – Introduction, Types of Trees, creating a Binary Tree from a General Tree, traversing a Binary Tree, 
+Binary Search Trees (BST), BST Operations- Searching, Insertion and Deletion, BST ADT, BST 
+Applications, Threaded Binary Trees, AVL Trees, Red –Black Trees, Splay Trees
 
-- **Linear list** – singly linked list implementation, insertion, deletion and searching operations on
-  linear list, circular linked list implementation, doubly linked list implementation, insertion,
-  deletion and searching operations. Applications of linked lists.
+## Unit 3
 
-## Module 2:
+- **Multi way Search Trees** - Introduction, B Trees, B Trees ADT, 2-3 Trees, 2-3- Tree, B* Tree, B+ Trees Heaps: Binary Heaps, Binomial heaps, Fibonacci heaps, Comparison of Various Heaps, Applications Searching: Introduction, Interpolation Search, Jump search.
 
-### Unit 1
+### Unit 4
 
-- **Stacks** - Operations, array and linked representations of stacks, stack applications-infix to
-  postfix conversion, postfix expression evaluation, recursion implementation.
+- **Graphs** - Introduction, Directed Graphs, Bi connected Components, Representation of Graphs, Graph Traversal Algorithms, Graph ADT, and Applications of Graphs Sorting: Radix Sort, Heap sort, Shell Sort, Tree Sort.
 
-### Unit 2
+### Unit 5
 
-- **Queues** - operations, array and linked representations. Circular Queue operations,
-  Dequeue, applications of queue.
+- **Hashing and Collision:** – Introduction, Hash Tables, Hash Functions, Different Hash Functions: Division Method, 
+Multiplication Method, Mid-square Method, Folding Method; collisions: Collision Resolution by 
+Open Addressing, Collision Resolution by Chaining Files and their Organization: Introduction, Data hierarchy, File Attributes, Text and Binary Files, Basic File Operations, File Organization, Indexing. 
 
-## Module 3:
-
-### Unit 1
-
-- **Trees** – Terminology, Representation of Trees, Binary tree ADT, Properties of Binary Trees,
-  Binary Tree Representations-array and linked representations, Binary Tree traversals, Threaded
-  binary trees, Binary Heap-Properties, Max and Min Heap, Operations-Insertion and Deletion,
-  Heap sort.
-
-### Unit 2
-
-- **Search Trees** - Binary Search tree, Tree traversals, AVL tree – operations, B-tree – operations,
-  B+ trees, Red Black tree.
-
-## Module 4:
-
-### Unit 1
-
-- **Graphs** - Terminology, sequential and linked representation, graph traversals: Depth First
-  Search & Breadth First Search implementation. Minimum spanning trees, Prims and Kruskals
-  method.
-
-### Unit 2
-
-- **Searching and Sorting** - Linear Search and Binary Search, Bubble sort, Insertion sort, Quick
-  and Merge sort.
-
-## Module 5:
-
-### Unit 1
-
-- **Hashing** - Hash table, Hash table representations, hash functions, collision resolution
-  techniques- separate chaining, open addressing-linear probing, quadratic probing, double
-  hashing, Re hashing, Extendible hashing.
-
-### Unit 2
-
-- **Pattern matching** - Introduction, Brute force, the Boyer –Moore algorithm, Knuth-Morris-Pratt
-  algorithm.
-
-<hr>
 
 # Data Structures Lab
 
 ## Experiment 1:
 
-> Write a C program that uses functions to perform the following operations on singly linked list:
-> `I. Creation. II. Insertion. III. Traversal. IV. Merge two single linked lists.`
+> Write a program that uses functions to perform the following operations on singly linked list:
+> `I. Creation. II. Insertion. III. Traversal. IV. Traversal.`
 
 ## Experiment 2:
 
-> Write a C program that uses functions to perform the following operations on doubly linked list. ` I. Creation II. Insertion III. Deletion IV. Traversal`
+> Write a program that uses functions to perform the following operations on doubly linked list: ` I. Creation II. Insertion III. Deletion IV. Traversal`
 
 ## Experiment 3:
 
-> Write a C program that implement stack operations using `> I. Arrays II. Linked Lists`
+>  Write a program that uses functions to perform the following operations on circular linked list: ` I. Creation II. Insertion III. Deletion IV. Traversal`
 
 ## Experiment 4:
 
-> I. Write a C program to convert infix expression to postfix expression using stack  
-> II. Write a C program to evaluate postfix expression`
+> Write a program that implement stack (its operations) using `I.Arrays II.ADT`
 
 ## Experiment 5:
 
-> Write a C program to convert infix expression to prefix expression using stack
+> Write a program that implement Queue (its operations) using `I.Arrays II.ADT`
 
 ## Experiment 6:
 
-> Write a C program to implement linear queue using. ` I.Arrays II. Linked Lists.`
+> Write a program that implements the following sorting methods to sort a given list of integers in ascending order `I. Radix Sort II. Heap sort III. Shell Sort IV. Tree Sort.`
 
 ## Experiment 7:
 
-> Write a C program to perform following operations on a circular Queue ` I. Insertion II. deletion III. search and count`
+> Write a program to implement the tree traversal methods (Recursive and Non-Recursive).
 
 ## Experiment 8:
 
-> Write a C Program to implement binary tree traversals
+> Write a program to implement `I. Binary Search tree II. B Trees III. B+ Trees IV. AVL trees V. Red - Black trees.`
 
 ## Experiment 9:
 
-> Write a C Program to implement AVL tree operations
+> Write a program to implement the graph traversal methods.
 
 ## Experiment 10:
 
-> Implementation of a Graph representation using Adjacency Matrix.
-
-## Experiment 11:
-
-> I.Write a program to implement Linear Search technique.
->
-> II. Write a program to implement Binary Search technique.
-
-## Experiment 12:
-
-> I. Write a program to implement Bubble sort technique.
->
-> II. Write a program to implement Insertion sort technique.
-
-## Experiment 13:
-
-> I. Write a program to implement Quick sort technique.
->
-> II. Write a program to implement Merge sort technique
+> Write a program to implement the following Hash Functions: `I. Division Method II. Multiplication Method III. Mid-square Method IV. Folding Method`

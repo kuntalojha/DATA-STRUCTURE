@@ -16,6 +16,7 @@ outline: auto
 - [Experiment 08](dslab/exp-8)
 - [Experiment 09](dslab/exp-9)
 - [Experiment 10](dslab/exp-10)
-- [Experiment 11](dslab/exp-11)
+
+<!-- - [Experiment 11](dslab/exp-11)
 - [Experiment 12](dslab/exp-12) 
-- [Experiment 13](dslab/exp-13)
+- [Experiment 13](dslab/exp-13) -->
