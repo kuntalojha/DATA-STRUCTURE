@@ -6,9 +6,7 @@ outline: deep
 
 ## Question
 
-- **Write a C program that implement stack operations using `I.Arrays II. Linked Lists`**
-
-## I. Arrays
+- **Write a program that uses functions to perform the following operations on circular linked list: `I. Creation II. Insertion III. Deletion IV. Traversal`**
 
 ### Program
 
@@ -16,192 +14,465 @@ outline: deep
 #include <stdio.h>
 #include <stdlib.h>
 
-// Push : Insert at top
-int push(int stack[], int top, int data, int size) {
-    if (top == size - 1) {
-        printf("Stack is full / overflow. Cannot push.\n");
-        return top;
-    }
-    stack[++top] = data;
-    return top;
-}
-
-// Pop : Remove from top
-int pop(int top) {
-    if (top == -1) {
-        printf("Stack is empty / underflow. Cannot pop.\n");
-        return top;
-    }
-    top--;
-    return top;
-}
-
-// Peek: Show top element
-void peek(int stack[], int top) {
-    if (top == -1) {
-        printf("Stack is empty. Cannot peek.\n");
-        return;
-    }
-    printf("Top element: %d\n", stack[top]);
-}
-
-void display(int stack[], int top) {
-    int i;
-    if (top == -1) {
-        printf("Stack is empty.\n");
-        return;
-    }
-
-    printf("Stack:\n");
-    printf("-----\n");
-    for (i = top; i >= 0; i--) {
-        printf("| %d |\n", stack[i]);
-    }
-    printf("-----\n");
-}
-
-int main() {
-    int size;
-    printf("Enter the size of the stack: ");
-    scanf("%d", &size);
-    int stack[size];  // Declaring the stack using array.
-
-    int top = -1;
-    int choice, data;
-
-    while (1) {
-        printf("\nMenu:\n");
-        printf("1. Push\n");
-        printf("2. Pop\n");
-        printf("3. Peek\n");
-        printf("4. Display\n");
-        printf("5. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                printf("Enter data: ");
-                scanf("%d", &data);
-                top = push(stack, top, data, size);
-                break;
-
-            case 2:
-                top = pop(top);
-                break;
-
-            case 3:
-                peek(stack, top);
-                break;
-
-            case 4:
-                display(stack, top);
-                break;
-
-            case 5:
-                printf("Exiting program.\n");
-                return 0;
-
-            default:
-                printf("Invalid choice! Try again.\n");
-        }
-    }
-    return 0;
-}
-
-```
-
-### Output
-
-```md
-
-```
-
-## II. Linked Lists
-
-### Program
-
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-struct node {
-    int data;
-    struct node *link;
+// Define structure
+struct node
+{
+  int data;
+  struct node *link;
 };
 
-// Push: Insert at top
-struct node* push(struct node *top, int data) {
-    struct node *newNode = (struct node *)malloc(sizeof(struct node));
-    newNode->data = data;
-    newNode->link = NULL;
-    newNode->link = top;
+// Create a new node
+struct node *createNode(int data)
+{
+  struct node *newNode = (struct node *)malloc(sizeof(struct node));
+  newNode->data = data;
+  newNode->link = NULL;
+  return newNode;
+}
+
+// Display list
+void display(struct node *head)
+{
+  if (head == NULL)
+  {
+    printf("Linked list is empty\n");
+    return;
+  }
+
+  struct node *ptr = head;
+
+  do
+  {
+    printf("%d -> ", ptr->data);
+    ptr = ptr->link;
+  } while (ptr != head);
+
+  printf("(head)\n");
+}
+
+// Count nodes
+void count(struct node *head)
+{
+  if (head == NULL)
+  {
+    printf("Linked list is empty\n");
+    return;
+  }
+
+  int count = 0;
+  struct node *ptr = head;
+
+  do
+  {
+    count++;
+    ptr = ptr->link;
+  } while (ptr != head);
+
+  printf("Number of nodes: %d\n", count);
+}
+
+// Insert at beginning
+struct node *insertAtBeginning(struct node *head, int data)
+{
+  struct node *newNode = createNode(data);
+
+  if (head == NULL)
+  {
+    newNode->link = newNode;
     return newNode;
+  }
+
+  struct node *temp = head;
+
+  while (temp->link != head)
+  {
+    temp = temp->link;
+  }
+
+  newNode->link = head;
+  temp->link = newNode;
+  head = newNode;
+
+  return head;
 }
 
-// Pop: Remove from top
-struct node* pop(struct node *top) {
-    struct node *temp = top;
-    if (top == NULL) {
-        printf("Can't pop. Stack is empty / underflow.\n");
-        return NULL;
-    }
-    top = top->link; // Move top to next node
-    printf("Popped element: %d\n", temp->data);
-    free(temp); // Free memory
-    return top;
+// Insert at end
+struct node *insertAtEnd(struct node *head, int data)
+{
+  struct node *newNode = createNode(data);
+
+  if (head == NULL)
+  {
+    newNode->link = newNode;
+    return newNode;
+  }
+
+  struct node *temp = head;
+
+  while (temp->link != head)
+  {
+    temp = temp->link;
+  }
+
+  temp->link = newNode;
+  newNode->link = head;
+
+  return head;
 }
 
-// Peek: Show top element
-void peek(struct node *top) {
-    if (top == NULL) {
-        printf("Stack is empty.\n");
-        return;
-    }
-    printf("Top / Peek element: %d\n", top->data);
+// Insert at position
+struct node *insertAtPosition(struct node *head, int data, int position)
+{
+  if (position == 1)
+  {
+    return insertAtBeginning(head, data);
+  }
+
+  struct node *newNode = createNode(data);
+  struct node *temp = head;
+
+  for (int i = 1; i < position - 1 && temp->link != head; i++)
+  {
+    temp = temp->link;
+  }
+
+  newNode->link = temp->link;
+  temp->link = newNode;
+
+  return head;
 }
 
-int main() {
-    struct node *top = NULL; // Empty stack
-    int choice, data;
+// Delete from beginning
+struct node *deleteFromBeginning(struct node *head)
+{
+  if (head == NULL)
+  {
+    printf("List is empty\n");
+    return NULL;
+  }
 
-    while (1) {
-        printf("\nMenu:\n");
-        printf("1. Push\n");
-        printf("2. Pop\n");
-        printf("3. Peek\n");
-        printf("4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+  if (head->link == head)
+  {
+    free(head);
+    return NULL;
+  }
 
-        switch (choice) {
-            case 1:
-                printf("Enter data: ");
-                scanf("%d", &data);
-                top = push(top, data);
-                break;
+  struct node *temp = head;
+  struct node *last = head;
 
-            case 2:
-                top = pop(top);
-                break;
+  while (last->link != head)
+  {
+    last = last->link;
+  }
 
-            case 3:
-                peek(top);
-                break;
-            case 4:
-                printf("Exiting program.\n");
-                return 0;
+  head = head->link;
+  last->link = head;
 
-            default:
-                printf("Invalid choice! Try again.\n");
-        }
+  free(temp);
+
+  printf("First node deleted\n");
+
+  return head;
+}
+
+// Delete from end
+struct node *deleteFromEnd(struct node *head)
+{
+  if (head == NULL)
+  {
+    printf("List is empty\n");
+    return NULL;
+  }
+
+  if (head->link == head)
+  {
+    free(head);
+    return NULL;
+  }
+
+  struct node *temp = head;
+  struct node *prev = NULL;
+
+  while (temp->link != head)
+  {
+    prev = temp;
+    temp = temp->link;
+  }
+
+  prev->link = head;
+
+  free(temp);
+
+  printf("Last node deleted\n");
+
+  return head;
+}
+
+// Delete from position
+struct node *deleteFromPosition(struct node *head, int position)
+{
+  if (head == NULL)
+  {
+    printf("List is empty\n");
+    return NULL;
+  }
+
+  if (position == 1)
+  {
+    return deleteFromBeginning(head);
+  }
+
+  struct node *temp = head;
+  struct node *prev = NULL;
+
+  for (int i = 1; i < position && temp->link != head; i++)
+  {
+    prev = temp;
+    temp = temp->link;
+  }
+
+  prev->link = temp->link;
+  free(temp);
+
+  printf("Node deleted from position %d\n", position);
+
+  return head;
+}
+
+int main()
+{
+  struct node *head = NULL;
+  int choice, data, position;
+
+  while (1)
+  {
+    printf("\nMenu:\n");
+    printf("1. Insert at Beginning\n");
+    printf("2. Insert at End\n");
+    printf("3. Insert at Position\n");
+    printf("4. Delete from Beginning\n");
+    printf("5. Delete from End\n");
+    printf("6. Delete from Position\n");
+    printf("7. Display List\n");
+    printf("8. Count Nodes\n");
+    printf("9. Exit\n");
+
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+    case 1:
+      printf("Enter data: ");
+      scanf("%d", &data);
+      head = insertAtBeginning(head, data);
+      break;
+
+    case 2:
+      printf("Enter data: ");
+      scanf("%d", &data);
+      head = insertAtEnd(head, data);
+      break;
+
+    case 3:
+      printf("Enter data: ");
+      scanf("%d", &data);
+      printf("Enter position: ");
+      scanf("%d", &position);
+      head = insertAtPosition(head, data, position);
+      break;
+
+    case 4:
+      head = deleteFromBeginning(head);
+      break;
+
+    case 5:
+      head = deleteFromEnd(head);
+      break;
+
+    case 6:
+      printf("Enter position: ");
+      scanf("%d", &position);
+      head = deleteFromPosition(head, position);
+      break;
+
+    case 7:
+      display(head);
+      break;
+
+    case 8:
+      count(head);
+      break;
+
+    case 9:
+      printf("Exiting...\n");
+      return 0;
+
+    default:
+      printf("Invalid choice\n");
     }
-    return 0;
+  }
 }
 ```
 
 ### Output
 
-```md
+```c
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 1
+Enter data: 123
 
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 1
+Enter data: 564
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 2
+Enter data: 586
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 3
+Enter data: 867
+Enter position: 2
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 7
+564 -> 867 -> 123 -> 586 -> (head)
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 8
+Number of nodes: 4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 4
+First node deleted
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 5
+Last node deleted
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 7
+867 -> 123 -> (head)
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 6
+Enter position: 2
+Node deleted from position 2
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 7
+867 -> (head)
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Display List
+8. Count Nodes
+9. Exit
+Enter your choice: 9
+Exiting...
 ```
