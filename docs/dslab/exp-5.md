@@ -6,103 +6,262 @@ outline: deep
 
 ## Question
 
-- **`Write a C program to convert infix expression to prefix expression using stack.`**
+- **Write a program that implement Queue (its operations) using `I. Arrays II. ADT`**
 
-### Program
+## 5.a I. Arrays:
+## Program:
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 
-// Function to return precedence of operators
-int prec(char c) {
-    if (c == '^')
-        return 3;
-    else if (c == '/' || c == '*')
-        return 2;
-    else if (c == '+' || c == '-')
-        return 1;
-    else
-        return -1;
-}
+int *queue;
+int front = -1, rear = -1, size = 0;
 
-// Function to perform infix to postfix conversion
-char * infixToPostfix(char * exp)
+// Enqueue function
+void enqueue(int data)
 {
-    int j = 0,i = 0;
-    int top = -1;//Indicates the stack is empty
-    int len = strlen(exp);
-    char *result=(char*)malloc(sizeof(char)*len);//To store Postfix expression
-    char *stack=(char *)malloc(sizeof(char)*len);
-    while(exp[i] != '\0')
+    if (rear == size - 1)
     {
-        char c = exp[i];
-        if (isalnum(c))                //Checking whether the character is alphanumeric
-            result[j++] = c;
-        else if (c == '(')             //checking whether the character is '('
-            stack[++top] = '(';
-        else if (c == ')') {           //checking whether the character is ')'
-            while (top != -1 && stack[top] != '(') {
-                result[j++] = stack[top--];
-            }
-            top--;
-        }
-        else {
-            while (top != -1 && (prec(c) < prec(stack[top]) || prec(c) == prec(stack[top]))) {
-                result[j++] = stack[top--];
-            }
-            stack[++top] = c;
-        }i++;
+        printf("Queue is full (Overflow).\n");
+        return;
     }
-
-    // Pop all the remaining elements from the stack and store it in the result
-    while (top != -1) {
-        result[j++] = stack[top--];
-    }
-    result[j] = '\0';
-    return result;
-
+    if (front == -1)
+        front = 0;
+    queue[++rear] = data;
+    printf("Enqueued element: %d\n", data);
 }
 
-char * reverse(char *str) { 
-    int n = strlen(str); 
-    int i,j=0 ; 
-    char *m=(char*)malloc(sizeof(char)*n); 
-    for (i = n-1; i >=0; i--) { 
-        char temp = str[i]; 
-        if (temp=='(') 
-           m[j] = ')'; 
-        else if(temp==')') 
-           m[j] = '('; 
-        else{ 
-           m[j]= temp; 
-        } 
-    j++; 
-} 
-    m[n]='\0'; 
-    return m; 
-} 
+// Dequeue function
+void dequeue()
+{
+    if (front == -1 || front > rear)
+    {
+        printf("Queue is empty (Underflow).\n");
+        return;
+    }
+    printf("Dequeued element: %d\n", queue[front++]);
+    if (front > rear)
+        front = rear = -1; // Reset
+}
 
-int main() {
-    // char expression[] = "A+B*C+D";
-    // char expression[] = "((A+B)-C*(D/E))+F";
-    char expression[] = "1+2*(3+4-5)*(4+2/6*3)-7";
-    char *revexp,*postfix,*revpost;
-    revexp=reverse(expression); 
-    postfix=(infixToPostfix(revexp));
-    revpost=(reverse(postfix));
-    printf("Infix Expression: %s\n", expression);
-    printf("Prefix Expression: %s\n", revpost);
+// Display front element
+void showFront()
+{
+    if (front == -1 || front > rear)
+    {
+        printf("Queue is empty.\n");
+    }
+    else
+    {
+        printf("Front element: %d\n", queue[front]);
+    }
+}
+
+// Display rear element
+void showRear()
+{
+    if (rear == -1 || front > rear)
+    {
+        printf("Queue is empty.\n");
+    }
+    else
+    {
+        printf("Rear element: %d\n", queue[rear]);
+    }
+}
+
+
+int main()
+{
+    int choice, data;
+
+    printf("Enter the size of the queue: ");
+    scanf("%d", &size);
+
+    // Dynamically allocate memory for queue
+    queue = (int *)malloc(size * sizeof(int));
+    if (queue == NULL)
+    {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    while (1)
+    {
+        printf("\nMenu:\n");
+        printf("1. Enqueue\n");
+        printf("2. Dequeue\n");
+        printf("3. Front\n");
+        printf("4. Rear\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter data: ");
+            scanf("%d", &data);
+            enqueue(data);
+            break;
+        case 2:
+            dequeue();
+            break;
+        case 3:
+            showFront();
+            break;
+        case 4:
+            showRear();
+            break;
+        case 5:
+            printf("Exiting program.\n");
+            free(queue); // Free allocated memory
+            return 0;
+        default:
+            printf("Invalid choice! Try again.\n");
+        }
+    }
     return 0;
 }
+```
+
+## Output:
 
 ```
 
-### Output
+``` 
+
+## 5.b II. Linked List:
+## Program:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *link;
+};
+
+// Global front and rear pointers
+struct node *front = NULL, *rear = NULL;
+
+// Create a new node
+struct node *createNode(int data)
+{
+    struct node *newNode = (struct node *)malloc(sizeof(struct node));
+    newNode->data = data;
+    newNode->link = NULL;
+    return newNode;
+}
+
+// Enqueue: Insert at rear
+void enqueue(int data)
+{
+    struct node *newNode = createNode(data);
+    if (rear == NULL)
+    {
+        front = rear = newNode;
+    }
+    else
+    {
+        rear->link = newNode;
+        rear = newNode;
+    }
+    printf("Enqueued element: %d\n", data);
+}
+
+// Dequeue: Remove from front
+void dequeue()
+{
+    if (front == NULL)
+    {
+        printf("Queue is empty.\n");
+        return;
+    }
+
+    struct node *temp = front;
+    front = front->link;
+
+    if (front == NULL)
+        rear = NULL;
+
+    printf("Dequeued element: %d\n", temp->data);
+    free(temp);
+}
+
+// Display front element
+void showFront()
+{
+    if (front == NULL)
+    {
+        printf("Queue is empty.\n");
+    }
+    else
+    {
+        printf("Front element: %d\n", front->data);
+    }
+}
+
+// Display rear element
+void showRear()
+{
+    if (rear == NULL)
+    {
+        printf("Queue is empty.\n");
+    }
+    else
+    {
+        printf("Rear element: %d\n", rear->data);
+    }
+}
+
+int main()
+{
+    int choice, data;
+
+    while (1)
+    {
+        printf("\nMenu:\n");
+        printf("1. Enqueue\n");
+        printf("2. Dequeue\n");
+        printf("3. Front\n");
+        printf("4. Rear\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter data: ");
+            scanf("%d", &data);
+            enqueue(data);
+            break;
+        case 2:
+            dequeue();
+            break;
+        case 3:
+            showFront();
+            break;
+        case 4:
+            showRear();
+            break;
+        case 5:
+            printf("Exiting program.\n");
+            return 0;
+        default:
+            printf("Invalid choice! Try again.\n");
+        }
+    }
+    return 0;
+}
+```
+
+## Output:
 
 ```
-Infix Expression: 1+2*(3+4-5)*(4+2/6*3)-7
-Prefix Expression: +1-*2*+3-45+4/2*637
+
 ``` 

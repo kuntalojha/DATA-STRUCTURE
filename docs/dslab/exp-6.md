@@ -6,259 +6,49 @@ outline: deep
 
 ## Question:
 
-- **Write a C program to implement linear queue using `I.Arrays II. Linked Lists`**
+- **Write a program that implements the following sorting methods to sort a given list of integers in ascending order. I. Radix Sort. II. Heap sort. III. Shell Sort. IV. Tree Short.**
 
-## I. Arrays:
-
+## I. Radix Sort:
 ## Program:
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
 
-int *queue;
-int front = -1, rear = -1, size = 0;
-
-// Enqueue function
-void enqueue(int data) {
-    if (rear == size - 1) {
-        printf("Queue is full (Overflow).\n");
-        return;
-    }
-    if (front == -1) front = 0;
-    queue[++rear] = data;
-    printf("Enqueued element: %d\n", data);
-}
-
-// Dequeue function
-void dequeue() {
-    if (front == -1 || front > rear) {
-        printf("Queue is empty (Underflow).\n");
-        return;
-    }
-    printf("Dequeued element: %d\n", queue[front++]);
-    if (front > rear) front = rear = -1; // Reset
-}
-
-// Display front element
-void showFront() {
-    if (front == -1 || front > rear) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("Front element: %d\n", queue[front]);
-    }
-}
-
-// Display rear element
-void showRear() {
-    if (rear == -1 || front > rear) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("Rear element: %d\n", queue[rear]);
-    }
-}
-
-// Display entire queue
-void displayQueue() {
-    if (front == -1 || front > rear) {
-        printf("Queue is empty.\n");
-        return;
-    }
-
-    printf("Queue elements: ");
-    for (int i = front; i <= rear; i++) {
-        printf("%d ", queue[i]);
-    }
-    printf("\n");
-}
-
-int main() {
-    int choice, data;
-
-    printf("Enter the size of the queue: ");
-    scanf("%d", &size);
-
-    // Dynamically allocate memory for queue
-    queue = (int *)malloc(size * sizeof(int));
-    if (queue == NULL) {
-        printf("Memory allocation failed!\n");
-        return 1;
-    }
-
-    while (1) {
-        printf("\nMenu:\n");
-        printf("1. Enqueue\n");
-        printf("2. Dequeue\n");
-        printf("3. Front\n");
-        printf("4. Rear\n");
-        printf("5. Display Queue\n");
-        printf("6. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                printf("Enter data: ");
-                scanf("%d", &data);
-                enqueue(data);
-                break;
-            case 2:
-                dequeue();
-                break;
-            case 3:
-                showFront();
-                break;
-            case 4:
-                showRear();
-                break;
-            case 5:
-                displayQueue();
-                break;
-            case 6:
-                printf("Exiting program.\n");
-                free(queue); // Free allocated memory
-                return 0;
-            default:
-                printf("Invalid choice! Try again.\n");
-        }
-    }
-    return 0;
-}
 ```
 
 ## Output:
-
 ```
 
 ```
-## II. Linked Lists
 
+## II. Heap sort:
 ## Program:
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
 
-struct node {
-    int data;
-    struct node *link;
-};
+```
 
-// Global front and rear pointers
-struct node *front = NULL, *rear = NULL;
+## Output:
+```
 
-// Create a new node
-struct node* createNode(int data) {
-    struct node* newNode = (struct node*)malloc(sizeof(struct node));
-    newNode->data = data;
-    newNode->link = NULL;
-    return newNode;
-}
+```
 
-// Enqueue: Insert at rear
-void enqueue(int data) {
-    struct node* newNode = createNode(data);
-    if (rear == NULL) {
-        front = rear = newNode;
-    } else {
-        rear->link = newNode;
-        rear = newNode;
-    }
-    printf("Enqueued element: %d\n", data);
-}
+## III. Shell Sort:
+## Program:
 
-// Dequeue: Remove from front
-void dequeue() {
-    if (front == NULL) {
-        printf("Queue is empty.\n");
-        return;
-    }
+```c
 
-    struct node* temp = front;
-    front = front->link;
+```
 
-    if (front == NULL)
-        rear = NULL;
+## Output:
+```
 
-    printf("Dequeued element: %d\n", temp->data);
-    free(temp);
-}
+```
 
-// Display front element
-void showFront() {
-    if (front == NULL) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("Front element: %d\n", front->data);
-    }
-}
+## IV. Tree Short:
+## Program:
 
-// Display rear element
-void showRear() {
-    if (rear == NULL) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("Rear element: %d\n", rear->data);
-    }
-}
+```c
 
-// Display all elements in the queue
-void displayQueue() {
-    if (front == NULL) {
-        printf("Queue is empty.\n");
-        return;
-    }
-
-    printf("Queue elements: ");
-    struct node* temp = front;
-    while (temp != NULL) {
-        printf("%d ", temp->data);
-        temp = temp->link;
-    }
-    printf("\n");
-}
-
-int main() {
-    int choice, data;
-
-    while (1) {
-        printf("\nMenu:\n");
-        printf("1. Enqueue\n");
-        printf("2. Dequeue\n");
-        printf("3. Front\n");
-        printf("4. Rear\n");
-        printf("5. Display Queue\n");
-        printf("6. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                printf("Enter data: ");
-                scanf("%d", &data);
-                enqueue(data);
-                break;
-            case 2:
-                dequeue();
-                break;
-            case 3:
-                showFront();
-                break;
-            case 4:
-                showRear();
-                break;
-            case 5:
-                displayQueue();
-                break;
-            case 6:
-                printf("Exiting program.\n");
-                return 0;
-            default:
-                printf("Invalid choice! Try again.\n");
-        }
-    }
-    return 0;
-}
 ```
 
 ## Output:
