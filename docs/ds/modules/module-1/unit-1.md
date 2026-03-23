@@ -2,21 +2,23 @@
 outline: deep
 ---
 
-![Linear & Non-Linear Data Structure](./images/m1p1.png)
+![Linear & Non-Linear Data Structure](../../../images/m1p1.png)
+![Difference between Linear & Non-Linear Data Structure](../../../images/m1p2.png)
 
-<!-- # 
-
+## Linked List 👇
 <div class="pdf-container">
   <iframe 
-    src="/DATA-STRUCTURE/TM.pdf#view=fitH" 
+    src="/DATA-STRUCTURE/ALL.pdf#view=fitH" 
     width="100%" 
     height="600px" 
     frameborder="0">
   </iframe>
 </div>
 
+## 
+
 <p>
-  If the PDF does not load, <a href="/DATA-STRUCTURE/TM.pdf" target="_blank">click here to download it</a>.
+  If the PDF does not load, <a href="/DATA-STRUCTURE/ALL.pdf" target="_blank">click here to download it</a>.
 </p>
 
 <style>
@@ -26,4 +28,4 @@ outline: deep
   border-radius: 4px;
   overflow: hidden;
 }
-</style> -->
+</style> 
