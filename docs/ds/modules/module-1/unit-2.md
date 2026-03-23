@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-# LINKED LIST
+# STACK
 
 <div class="pdf-container">
   <iframe 
-    src="/DATA-STRUCTURE/ALL.pdf#view=fitH" 
+    src="/DATA-STRUCTURE/S.pdf#view=fitH" 
     width="100%" 
     height="600px" 
     frameborder="0">
@@ -14,7 +14,7 @@ outline: deep
 </div>
 
 <p>
-  If the PDF does not load, <a href="/DATA-STRUCTURE/ALL.pdf" target="_blank">click here to download it</a>.
+  If the PDF does not load, <a href="/DATA-STRUCTURE/S.pdf" target="_blank">click here to download it</a>.
 </p>
 
 <style>
@@ -25,3 +25,26 @@ outline: deep
   overflow: hidden;
 }
 </style>
+
+# QUEUE
+
+![Queue Real World Example](../../../images/queue.png)
+
+- A queue is a linear data structure that stores items in First In First Out (FIFO) order.
+- It is also known as a First Come, First Serve (FCFS).
+- It is opened at both the ends (Rear and Front Ends).
+- The elements can be inserted at the rear end and deleted from the front end.
+- Queue maintains two variables Front and Rear. Initial value of Front and Rear are -1.
+
+![Queue Data Structure](../../../images/queue1.png)
+
+**Basic operations performed on queue are:**
+
+1. Insertion-Inserts the element at rear end of the queue .
+2. Deletion- deletes the element from front end of the queue.
+
+
+<p>
+  If the PDF does not load, <a href="/DATA-STRUCTURE/Q.pdf" target="_blank">click here to download it</a>.
+</p>
+
