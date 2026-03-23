@@ -2,7 +2,9 @@
 outline: deep
 ---
 
-# 
+![Linear & Non-Linear Data Structure](./images/m1p1.png)
+
+<!-- # 
 
 <div class="pdf-container">
   <iframe 
@@ -24,4 +26,4 @@ outline: deep
   border-radius: 4px;
   overflow: hidden;
 }
-</style>
+</style> -->
