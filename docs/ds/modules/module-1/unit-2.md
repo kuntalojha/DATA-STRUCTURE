@@ -43,6 +43,17 @@ outline: deep
 1. Insertion-Inserts the element at rear end of the queue .
 2. Deletion- deletes the element from front end of the queue.
 
+<br>
+<br>
+
+<div class="pdf-container">
+  <iframe 
+    src="/DATA-STRUCTURE/Q.pdf#view=fitH" 
+    width="100%" 
+    height="600px" 
+    frameborder="0">
+  </iframe>
+</div>
 
 <p>
   If the PDF does not load, <a href="/DATA-STRUCTURE/Q.pdf" target="_blank">click here to download it</a>.

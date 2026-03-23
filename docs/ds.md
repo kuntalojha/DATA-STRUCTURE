@@ -2,15 +2,34 @@
 outline: deep
 ---
 # Data Structure Topics
-!()
+
+## Module 1
+- [Unit 1](/ds/modules/module-1/unit-1)
+- [Unit 2](/ds/modules/module-1/unit-2)
+
+## Module 2
+- [Module 2](/ds/modules/module-2/module-2)
+
+<br>
+<br>
 
 # Data Structure Questions
+<br>
+<br>
+ <div class="coming-soon">🚧 COMING SOON... 🚧</div>
 
-<!-- ## Linked List
+<style>
+.coming-soon {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff4d4f;
+  animation: blink 1.5s infinite;
+}
 
-1.  What is a skip list? (2 marks)
-2.  Discuss in brief about single linked list? (7 marks)
-3.  Define a single linked list. Write the structure of the linked list with a neat sketch. (8 marks)
-4.  (A) Explain the operations of the skip list representation.(10 marks)
-5.  (B) Is linear probing and open addressing same? Justify your answer. (5 marks)
-6.  Write an algorithm of Insert and Delete operation in Singly Linked List. (7 marks) -->
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+</style>

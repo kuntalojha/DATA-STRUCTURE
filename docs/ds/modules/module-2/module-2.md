@@ -1,15 +1,16 @@
 
 <div class="pdf-container">
   <iframe 
-    src="/DATA-STRUCTURE/M3P1.pdf#view=fitH" 
+    src="/DATA-STRUCTURE/MODULE2.pdf#view=fitH" 
     width="100%" 
     height="600px" 
     frameborder="0">
   </iframe>
 </div>
 
+## MODULE 2
 <p>
-  If the PDF does not load, <a href="/DATA-STRUCTURE/M3P1.pdf" target="_blank">click here to download it</a>.
+  If the PDF does not load, <a href="/DATA-STRUCTURE/MODULE2.pdf" target="_blank">click here to download it</a>.
 </p>
 
 <style>

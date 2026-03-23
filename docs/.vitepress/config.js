@@ -20,8 +20,7 @@ export default defineConfig({
         items: [
           { text: 'M1 Unit 01', link: '/ds/modules/module-1/unit-1' },
           { text: 'M1 Unit 02', link: '/ds/modules/module-1/unit-2' },
-          { text: 'M2 Unit 01', link: '/ds/modules/module-2/unit-1' },
-          { text: 'M2 Unit 02', link: '/ds/modules/module-2/unit-2' },
+          { text: 'Module 02', link: '/ds/modules/module-2/module-2' },
           { text: 'Module 03', link: '/ds/modules/module-3/module-3' },
           { text: 'Module 04', link: '/ds/modules/module-4/module-4' },
           { text: 'Module 05', link: '/ds/modules/module-5/module-5' },
@@ -30,20 +29,24 @@ export default defineConfig({
       {
         text: 'Data Structure Lab',
         items: [
-          { text: 'Experiment 01', link: '/dslab/exp-1.md' },
-          { text: 'Experiment 02', link: '/dslab/exp-2.md' },
-          { text: 'Experiment 03', link: '/dslab/exp-3.md' },
-          { text: 'Experiment 04', link: '/dslab/exp-4.md' },
-          { text: 'Experiment 05', link: '/dslab/exp-5.md' },
-          { text: 'Experiment 06', link: '/dslab/exp-6.md' },
-          { text: 'Experiment 07', link: '/dslab/exp-7.md' },
-          { text: 'Experiment 08', link: '/dslab/exp-8.md' },
-          { text: 'Experiment 09', link: '/dslab/exp-9.md' },
-          { text: 'Experiment 10', link: '/dslab/exp-10.md' },
+          { text: 'Experiment 01', link: '/dslab/exp-1' },
+          { text: 'Experiment 02', link: '/dslab/exp-2' },
+          { text: 'Experiment 03', link: '/dslab/exp-3' },
+          { text: 'Experiment 04', link: '/dslab/exp-4' },
+          { text: 'Experiment 05', link: '/dslab/exp-5' },
+          { text: 'Experiment 06', link: '/dslab/exp-6' },
+          { text: 'Experiment 07', link: '/dslab/exp-7' },
+          { text: 'Experiment 08', link: '/dslab/exp-8' },
+          { text: 'Experiment 09', link: '/dslab/exp-9' },
+          { text: 'Experiment 10', link: '/dslab/exp-10' },
         ],
       },
     ],
-
+     footer: {
+  message: 'Released under the MIT License.',
+  copyright:
+    'Copyright © 2026 <a href="https://kuntalojha.github.io/MRKUNTALOJHA/" target="_blank">Kuntal Ojha</a>'
+},
     socialLinks: [
       { icon: 'github', link: 'https://github.com/kuntalojha' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/mrkuntalojha/' },
