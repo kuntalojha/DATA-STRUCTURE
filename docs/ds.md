@@ -3,12 +3,15 @@ outline: deep
 ---
 # Data Structure Topics
 
-## Module 1
+## MODULE 1
 - [Unit 1](/ds/modules/module-1/unit-1)
 - [Unit 2](/ds/modules/module-1/unit-2)
 
-## Module 2
-- [Module 2](/ds/modules/module-2/module-2)
+## MODULE 2
+- [MODULE 2](/ds/modules/module-2/module-2)
+
+## MODULE 3
+- [MODULE 3](/ds/modules/module-3/module-3)
 
 <br>
 <br>
