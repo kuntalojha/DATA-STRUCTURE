@@ -11,9 +11,6 @@ outline: deep
 ### Program
 
 ```c
-### Program
-
-```c
 #include <stdio.h>
 #include <stdlib.h>
 // Define the structure
